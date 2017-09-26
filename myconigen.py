@@ -25,12 +25,6 @@ def get_random_name():
       out_string.append(rand_x)
   return ' '.join(out_string)
 
-def get_random_nonmagical_toxicity_effect():
-  # figure out what kind of non-magical toxicity it has, including psychoactive effects
-  # could be: blinded, deafened, fatigued (level), frightented, paralyzed, or just poisoned
-  # additionally? could suffer from auditory/visual hallucinations, enraged (completely hostile), charmed (completely non-hostile)
-  nm_conditions = ['blinded','deafened','fatigued','frightened','paralyzed','poisoned']
-
 def get_random_dc():
   dcs = [0]*30 + [1]*20 + [2]*15 + [3]*10 + [4]*5 + [5]*3 + [6]*3 + [7,8,9,10,11]*2 + [12,13,14,15,16,17,18,19,20]
   return 10 + random.choice(dcs)
@@ -91,7 +85,11 @@ class Mushroom:
         self.effect = Effect(type='none')
 
   def __str__(self):
-    return self.name + ': a ' + self.magicality + ', ' + self.edibility + ' mushroom; ' + self.effect.text
+    # probably a more elegant approach but..
+    if self.edibility == 'inedible':
+      return self.name + ': an ' + self.edibility + ' mushroom; ' + self.effect.text
+    else:
+      return self.name + ': a ' + self.magicality + ', ' + self.edibility + ' mushroom; ' + self.effect.text
 
 class Effect:
   def __init__(self, type, duration_die=None, duration_unit=None, difficulty=None):
@@ -109,24 +107,15 @@ class Effect:
       self.text = "On a failed DC " + str(self.difficulty) + " CON save, you are " + random.choice(conditions) + " for " + self.duration_die + " " + self.duration_unit + "."
     elif type == 'none':
       # there is no effect
-      self.text = "It has no special uses or effects"
+      self.text = "it has no special uses or effects"
     elif type == 'mundane_culinary':
       # the effect is good cookin'
       races = ['humans','elves','dwarves','halflings','gnomes','tieflings','dragonborn','orcs','goblins','kobolds','lizardfolk']
-      foods = ['ale','beer','wine','stew','roast','tea','a special spice powder', 'meat dishes', 'vegetable dishes']
-      self.text = "It is popular among " + random.choice(races) + " for making " + random.choice(foods) + "."
+      foods = ['ale','beer','wine','stews','soups','roasts','tea','a special spice powder', 'various meat dishes', 'various poultry dishes','various seafood dishes','various vegetable dishes','rice dishes','oat dishes','barley dishes','various grain dishes','pickles','fermeneted foods']
+      self.text = "it is popular among " + random.choice(races) + " for making " + random.choice(foods) + "."
     else:
       # magical effect, which can overlap with the mundane effects
-      self.text = 'foo'
-
-  def set_nonmagical_toxic_effect(duration_unit, duration_die):
-    if duration_unit == 'permanently':
-      self.duration = 'permanently'
-    else:
-      self.duration = ' '.join(['for',duration_die,duration_unit])
-    dcs = [0]*30 + [1]*20 + [2]*15 + [3]*10 + [4]*5 + [5]*3 + [6]*3 + [7,8,9,10,11]*2 + [12,13,14,15,16,17,18,19,20]
-    self.difficulty = difficulty or 10 + random.choice(dcs)
-
+      self.text = 'it does something shiny, sparkly, or magically dangerous'
 
   def __str__(self):
     return self.text
