@@ -3,11 +3,11 @@ import json
 import random
 
 # Setup; these are needed everywhere. If the script grows, this will have to move.
-CONDITIONS = ['blinded','deafened','fatigued','frightened','paralyzed','poisoned','stunned','unconscious']
+CONDITIONS = ['you are blinded',' you are deafened','you gain 1 level of exhaustion','you are frightened',' you are paralyzed','you are poisoned','you are stunned','you fall unconscious']
 
-MAGICAL_CONDITIONS = CONDITIONS + ['you become invisible','you are petrified','you are stunned','your speed is reduced by half','your speed is doubled','you grow one size category larger','you are reduced in size by one size category','you become ethereal',' you gain resistance to random_element','you gain vulnerablity to random_element','you gain darkvision', 'you gain low-light vision', 'you lose your darkvision','you lose your low-light vision','you gain a fly speed equal to you base speed','you take random_die HP of random damage', 'you take random_die HP of random_element damage per random_unit', 'you regain random_die HP','you regain random_die HP per random_unit','you exude a potent stench as per Stinking Cloud','your random_ability score is increased by 2 points','your random_ability score is decreased by 2 points']
+MAGICAL_CONDITIONS = CONDITIONS + ['you become invisible','you are petrified','you are stunned','your speed is reduced by half','your speed is doubled','you grow one size category larger','you are reduced in size by one size category','you become ethereal',' you gain resistance to random_element','you gain vulnerablity to random_element','you gain darkvision', 'you gain low-light vision', 'you lose your darkvision','you lose your low-light vision','you gain a fly speed equal to you base speed','you take random_die HP of random_element', 'you take random_die HP of random_element damage per random_unit', 'you regain random_die HP','you regain random_die HP per random_unit','you exude a potent stench as per Stinking Cloud','your random_ability score is increased by 2 points','your random_ability score is decreased by 2 points']
 
-ELEMENTS = ['acid','cold','fire','force','necrotic','poison','psychic','radiant','thunder']
+ELEMENTS = ['acid damage','cold damage','fire damage','force damage','necrotic damage','poison damage','psychic damage','radiant damage','thunder damage']
 
 ABILITIES = ['Strength','Dexterity','Constitution','Intelligence','Wisdom','Charisma']
 
@@ -105,13 +105,14 @@ class Effect:
     self.duration_die = duration_die or random.choice(DICE)
     self.duration_unit = duration_unit or random.choice(UNITS)
     self.difficulty = difficulty or 10 + random.choice(DCS)
+    condition = None
 
     if type == 'death':
       # the effect is death; it's as permanent as the game allows
       self.text = "On a failed DC " + str(self.difficulty) + " CON save, you die."
     elif type == 'mundane_toxin':
       # the effect is a nonmagical toxin
-      self.text = "on a failed DC " + str(self.difficulty) + " CON save, you are " + random.choice(CONDITIONS) + " for " + self.duration_die + " " + self.duration_unit + "."
+      self.text = "CON (DC " + str(self.difficulty) + ") or " + random.choice(CONDITIONS) + " for " + self.duration_die + " " + self.duration_unit + "."
     elif type == 'none':
       # there is no effect
       self.text = "it has no special uses or effects"
@@ -122,18 +123,30 @@ class Effect:
       # magical effect, which can overlap with the mundane effects
       # parse selected conditions
       this_condition = random.choice(MAGICAL_CONDITIONS)
-      print(this_condition)
       condition = this_condition
       if 'random_element' in this_condition:
         condition = this_condition.replace('random_element', random.choice(ELEMENTS))
-        print(condition)
       if 'random_die' in this_condition:
         condition = this_condition.replace('random_die', random.choice(DICE))
       if 'random_unit' in this_condition:
         condition = this_condition.replace('random_unit', self.duration_unit)
       if 'random_ability' in this_condition:
         condition = this_condition.replace('random_ability', random.choice(ABILITIES))
-      self.text = "CON (DC " + str(self.difficulty) + ") or " + condition + " for " + self.duration_die + " " + self.duration_unit + "."
+      if 'damage per' in this_condition:
+        if self.duration_unit == 'permanently':
+          self.text = "CON (DC " + str(self.difficulty) + ") or " + condition + "  " + self.duration_unit + "."
+        else:
+          self.text = "CON (DC " + str(self.difficulty) + ") or " + condition + " per " + self.duration_unit + " for " + self.duration_die + " " + self.duration_unit + "."
+      elif ' HP ' in this_condition:
+        if self.duration_unit == 'permanently':
+          self.text = "CON (DC " + str(self.difficulty) + ") or " + condition + "  " + self.duration_unit + "."
+        else:
+          self.text = "CON (DC " + str(self.difficulty) + ") or " + condition + "."
+      else:
+        if self.duration_unit == 'permanently':
+          self.text = "CON (DC " + str(self.difficulty) + ") or " + condition + "  " + self.duration_unit + "."
+        else:
+          self.text = "CON (DC " + str(self.difficulty) + ") or " + condition + " for " + self.duration_die + " " + self.duration_unit + "."
 
   def __str__(self):
     return self.text
