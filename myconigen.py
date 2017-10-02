@@ -157,6 +157,3 @@ class Effect:
 
   def __str__(self):
     return self.text
-
-m = Mushroom()
-print(m)
