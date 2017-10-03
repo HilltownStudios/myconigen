@@ -6,6 +6,7 @@ import json
 import tracery
 from tracery.modifiers import base_english
 import tweepy
+from time import sleep
 
 from secrets import *
 
@@ -66,10 +67,18 @@ api = tweepy.API(auth)
 grammar = tracery.Grammar(rules)
 grammar.add_modifiers(base_english)
 
-m = grammar.flatten("#sentence#")
+n = 'always'
 
-while len(m) > 140:
+while n == 'always':
   m = grammar.flatten("#sentence#")
-
-print(m)
-api.update_status(m)
+  while len(m) > 140:
+    m = grammar.flatten("#sentence#")
+  try:
+    print(m)
+    api.update_status(m)
+  except tweepy.TweepError as e:
+    print(e.reason)
+  except StopIteration:
+    break
+  # do this every 2 hours.
+  sleep(7200)
