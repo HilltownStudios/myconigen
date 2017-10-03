@@ -5,6 +5,9 @@
 import json
 import tracery
 from tracery.modifiers import base_english
+import tweepy
+
+from secrets import *
 
 rules = {
   'sentence': 
@@ -39,7 +42,7 @@ rules = {
   'c': json.load(open('data/mushroom_c.json')),
   'race': ['humans','elves','dwarves','halflings','gnomes','tieflings','dragonborn','orcs','goblins','kobolds','lizardfolk','merfolk'],
   'food': ['ale','beer','wine','stews','soups','roasts','tea','a special spice powder','various meat dishes', 'various poultry dishes','various seafood dishes','various vegetable dishes','rice dishes','oat dishes','barley dishes','various grain dishes','pickles','fermeneted foods'],
-  'mundaneFail': ['you are blinded','you are deafened','you gain 1 level of exhaustion','you are frightened','you are paralyzed','you are poisoned','you are stunned','you fall unconscious'],
+  'mundaneFail': ['blinded','deafened','gain 1 level of exhaustion','frightened','paralyzed','poisoned','stunned','fall unconscious'],
   'duration': ['for #die# #unit.s#','permanently'],
   'ongoing': ['per #dur# for #die# #dur.s#'],
   'n': ['1','2','3','4','5','6','7','8','9','10'],
@@ -50,10 +53,23 @@ rules = {
   'magicalDamage':['#die# points of #element# damage'],
   'element': ['acid','cold','fire','force','necrotic','poison','psychic','radiant','thunder'],
   'dc': ['10']*30 + ['11']*20 + ['12']*15 + ['13']*10 + ['14']*5 + ['15']*3 + ['16']*3 + ['17','18','19','20','21']*2 + ['22','23','24','25','26','27','28','29','30'],
-  'magicalFail': ['#mundaneFail#','you become invisible','you are petrified','you are stunned','your speed is reduced by half','your speed is doubled','you grow one size category larger','you are reduced in size by one size category','you become ethereal','you gain resistance to random_element','you gain vulnerablity to random_element','you gain darkvision', 'you gain low-light vision', 'you lose any darkvision you possess','you lose any low-light vision you possess','you gain a fly speed equal to your base speed','you exude a potent stench as per Stinking Cloud','your #ability# score is increased by 2 points','your #ability# score is decreased by 2 points'],
+  'magicalFail': ['#mundaneFail#','become invisible','petrified','stunned','speed is reduced by half','speed is doubled','grow one size category larger','reduced in size by one category','become ethereal','gain resistance to #element# damage','gain vulnerablity to #element# damage','gain darkvision', 'gain low-light vision', 'lose any darkvision you possess','lose any low-light vision you possess','gain a fly speed equal to your base speed','exude a potent stench as per Stinking Cloud','#ability# score is increased by 2 points','#ability# score is decreased by 2 points'],
   'ability': ['STR','DEX','CON','INT','WIS','CHA'],
 }
 
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret) 
+
+auth.set_access_token(access_token, access_secret)
+
+api = tweepy.API(auth)
+
 grammar = tracery.Grammar(rules)
 grammar.add_modifiers(base_english)
-print(grammar.flatten("#sentence#"))
+
+m = grammar.flatten("#sentence#")
+
+while len(m) > 140:
+  m = grammar.flatten("#sentence#")
+
+print(m)
+api.update_status(m)
