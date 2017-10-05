@@ -46,7 +46,7 @@ rules = {
   'mundaneFail': ['blinded','deafened','gain 1 level of exhaustion','frightened','paralyzed','poisoned','stunned','fall unconscious'],
   'duration': ['for #die# #unit.s#','permanently'],
   'ongoing': ['per #dur# for #die# #dur.s#'],
-  'n': ['1','2','3'] * 4 + ['4','5','6','7','8','9','10']
+  'n': ['1','2','3'] * 4 + ['4','5','6','7','8','9','10'],
   's': ['4','6','8'] * 2 + ['10','12','20'],
   'die': ['#n#d#s#'],
   'unit': ['round','minute','hour','day'],
