@@ -84,10 +84,10 @@ while n == 'always':
     m = grammar.flatten("#sentence#")
   try:
     print(m)
-    #api.update_status(m)
+    api.update_status(m)
   except tweepy.TweepError as e:
     print(e.reason)
   except StopIteration:
     break
   # do this every 2 hours.
-  #sleep(7200)
+  sleep(7200)

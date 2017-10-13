@@ -1,0 +1,87 @@
+Traceback (most recent call last):
+  File "myconigen.py", line 11, in <module>
+    from secrets import *
+ImportError: No module named 'secrets'
+Midnight Treant Mildew: a mundane, tasteless mushroom; it has no special uses or effects.
+Pink Dapperling: a mundane, tasteless mushroom; it has gardening applications.
+Firenewt  Scurfy Nest: a magical deadly mushroom; CON DC 11; fail: death; succeed: 2d6 points of poison damage.
+Weeping Inkcap: a mundane, tasteless mushroom; it is used for ornamentation.
+Mammoth Fungus: an inedible mushroom; it has no special uses or effects.
+Bedstraw Candlesnuff: a mundane, tasteless mushroom; it has no special uses or effects.
+Drider Lentil Jellybaby: a mundane, tasty mushroom; gnomes use it to make various seafood dishes.
+Camel Sedge Crust: a mundane, tasty mushroom; elves use it to make rice dishes.
+Tarrasque Distinguished Cap: a mundane, tasteless mushroom; it has gardening applications.
+Boggle False Cakes: a mundane, toxic mushroom; CON DC 13; fail: 2d20 points of poison damage; succeed: half.
+Snaketongue Turtle Sputnik: a mundane, tasteless mushroom; it is used for ornamentation.
+Lion Drumstick Disco: a mundane, toxic mushroom; CON DC 26; fail: paralyzed permanently; succeed: no effect.
+Hair  Mercury Deathcap: a mundane, toxic mushroom; CON DC 11; fail: poisoned for 9d20 hours; succeed: no effect.
+Goblin Bulbous Deceiver: a magical, toxic mushroom; CON DC 11; fail: 6d12 points of cold damage; succeed: no effect.
+Pavement Custard: a mundane, toxic mushroom; CON DC 29; fail: 2d12 points of poison damage; succeed: half.
+Tanarukk Truffleclub: a mundane, tasteless mushroom; it is used for ornamentation.
+Sprite Whiskery Rust: a mundane, tasty mushroom; humans use it to make roasts.
+Cinnamon Honey Deathcap: a mundane, toxic mushroom; CON DC 11; fail: 9d20 points of poison damage; succeed: half.
+Hunter Skinny Jellydisc: a mundane, tasteless mushroom; it has no special uses or effects.
+Hairy Bat Nest: a magical, toxic mushroom; CON DC 24; fail: 7d20 points of radiant damage; succeed: half.
+Snakeskin Fungus: a mundane, toxic mushroom; CON DC 25; fail: 5d4 points of poison damage; succeed: no effect.
+Common Twiglet: a mundane, toxic mushroom; CON DC 12; fail: blinded for 2d20 rounds; succeed: no effect.
+Hag Club: an inedible mushroom; it has no special uses or effects.
+Pancake Allosaurus Smut: a mundane, tasteless mushroom; it has gardening applications.
+Pavement Neothelid Candlesnuff: a mundane, tasteless mushroom; it has gardening applications.
+Hook Smut: a magical, toxic mushroom; CON DC 13; fail: 3d6 points of thunder damage; succeed: half.
+Distinguished Revenant Truffleclub: a mundane, tasty mushroom; orcs use it to make oat dishes.
+Lich False Cap: a mundane deadly mushroom; CON DC 10; fail: death; succeed: 1d10 points of poison damage.
+Bulbous Succubus Deathcap: an inedible mushroom; it has no special uses or effects.
+Gassy Lemon Milkcap: a magical, toxic mushroom; CON DC 11; fail: 8d8 points of poison damage per hour for 2d6 hours; succeed: half.
+Mealy Pancake Smut: a mundane, tasty mushroom; kobolds use it to make roasts.
+Warlord Parachute: a mundane, tasty mushroom; dwarves use it to make barley dishes.
+Lion Shield: a magical, toxic mushroom; CON DC 19; fail: lose any low-light vision you possess for 7d8 rounds; succeed: no effect.
+Tlincalli Butter: a mundane, toxic mushroom; CON DC 12; fail: 6d4 points of poison damage; succeed: no effect.
+Pegasus Milkcap: a mundane, tasteless mushroom; it has no special uses or effects.
+Frosted Worm Milkcap: a mundane, toxic mushroom; CON DC 18; fail: frightened permanently; succeed: no effect.
+Cinnamon Candlesnuff: a mundane, tasteless mushroom; it has no special uses or effects.
+Cockatrice Weeping Hotlips: a mundane, tasteless mushroom; it has no special uses or effects.
+Mint Ankheg Cauliflower: an inedible mushroom; it has no special uses or effects.
+Homunculus Milkcap: a mundane, tasty mushroom; halflings use it to make oat dishes.
+Snakeskin Lemon Club: a mundane, toxic mushroom; CON DC 10; fail: 3d4 points of poison damage per hour for 10d8 hours; succeed: no effect.
+Mint Crust: a mundane, toxic mushroom; CON DC 13; fail: 3d4 points of poison damage; succeed: half.
+Common Snakeskin Oyster: a magical, toxic mushroom; CON DC 13; fail: stunned for 9d8 rounds; succeed: no effect.
+Mint Bulbous Cakes: a mundane, tasteless mushroom; it has no special uses or effects.
+Destroying Eye: a mundane, toxic mushroom; CON DC 23; fail: 8d4 points of poison damage per hour for 1d4 hours; succeed: no effect.
+Tyrant Jellybaby: an inedible mushroom; it has no special uses or effects.
+Distinguished Knight: an inedible mushroom; it has no special uses or effects.
+Cryptic Phase Spider Earthstar: a mundane, tasteless mushroom; it is used for ornamentation.
+Dewdrop Grick Navel: a mundane, tasty mushroom; lizardfolk use it to make various grain dishes.
+Bullywug Twisted Foot: a mundane, tasty mushroom; merfolk use it to make oat dishes.
+Dewdrop Bonfire Funnel: a mundane, tasty mushroom; halflings use it to make stews.
+Cinnamon Common Mildew: a mundane, tasteless mushroom; it is used for ornamentation.
+Common Scurfy Bell: a mundane, tasteless mushroom; it has no special uses or effects.
+Sedge Club: a magical, toxic mushroom; CON DC 12; fail: 1d8 points of cold damage per minute for 3d4 minutes; succeed: no effect.
+Pink Weasel Fungus: an inedible mushroom; it has no special uses or effects.
+Eagle Purple Mildew: a mundane, toxic mushroom; CON DC 11; fail: 3d4 points of poison damage per hour for 1d6 hours; succeed: no effect.
+Sedge Cauliflower: a magical, toxic mushroom; CON DC 26; fail: 2d4 points of acid damage per round for 9d6 rounds; succeed: no effect.
+Drumstick Wight Butter: an inedible mushroom; it has no special uses or effects.
+Shrieker Drumstick Earthball: a mundane, toxic mushroom; CON DC 10; fail: 3d4 points of poison damage; succeed: half.
+Warlord Disco: a mundane, tasteless mushroom; it is used for ornamentation.
+Vargouille Nuts Sputnik: an inedible mushroom; it has no special uses or effects.
+Fingered Werebear Fieldcap: an inedible mushroom; it has no special uses or effects.
+Barometer Gassy Candlesnuff: a mundane, toxic mushroom; CON DC 11; fail: stunned permanently; succeed: no effect.
+Dark Pink Crust: a mundane, tasteless mushroom; it has gardening applications.
+Lion Polar Dapperling: a mundane, tasteless mushroom; it is used for ornamentation.
+Mercury Skinny Club: a mundane, toxic mushroom; CON DC 13; fail: 3d8 points of poison damage; succeed: no effect.
+Hag Funeral Tooth: a mundane, tasteless mushroom; it has gardening applications.
+Twisted Cakes: a mundane, tasteless mushroom; it has no special uses or effects.
+Roper Bald Fungus: a mundane, toxic mushroom; CON DC 10; fail: 1d6 points of poison damage per minute for 8d6 minutes; succeed: no effect.
+Hair  Fieldcap: an inedible mushroom; it has no special uses or effects.
+Drumstick Honey Flirt: a mundane, toxic mushroom; CON DC 12; fail: 1d10 points of poison damage; succeed: no effect.
+Elbowpatch Merfolk Crust: a mundane, tasty mushroom; elves use it to make various poultry dishes.
+Wererat Wet Candlesnuff: a mundane, toxic mushroom; CON DC 10; fail: 1d6 points of poison damage per hour for 3d4 hours; succeed: no effect.
+Bonfire Pink Flirt: a mundane, toxic mushroom; CON DC 10; fail: 2d4 points of poison damage per minute for 1d4 minutes; succeed: no effect.
+Centipede Elfcup: a mundane, tasteless mushroom; it has no special uses or effects.
+Midnight Pretender: a mundane, toxic mushroom; CON DC 30; fail: paralyzed permanently; succeed: no effect.
+Orog Drab Bonnet: an inedible mushroom; it has no special uses or effects.
+Contorted Knight: an inedible mushroom; it has no special uses or effects.
+Wet Bulbous Disco: a mundane, toxic mushroom; CON DC 12; fail: 1d20 points of poison damage per round for 1d4 rounds; succeed: half.
+Owl Contorted Earthstar: a magical, toxic mushroom; CON DC 12; fail: 2d12 points of cold damage per hour for 3d10 hours; succeed: half.
+Distinguished Gassy Tooth: a magical, toxic mushroom; CON DC 13; fail: 1d8 points of fire damage per hour for 7d4 hours; succeed: no effect.
+Gassy Midnight Fingers: a mundane, toxic mushroom; CON DC 12; fail: 8d4 points of poison damage per round for 3d20 rounds; succeed: half.
+Tadpole Mercury Fungus: a mundane, tasty mushroom; merfolk use it to make tea.
