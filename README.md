@@ -1,7 +1,11 @@
 # myconigen
-5e focused random mushroom generator.
+5e focused random mushroom generator (for now).
 
 This is the brain behind the Twitter bot @MagicMyco, which tweets random fantasy mushrooms every two hours. 
+
+Soon, it will also be the brain behind bot for reddit, located at u/MagicMycoBot. 
+
+Until I create the bot program, the documentation here will continue to be Twitter focused.
 
 If you want to make your own bot, you can use this as an example. The only thing missing from the source tree is the secrets.py file which contains Twitter credentials. The contents of that file are simple enough (supply your own credentials after signing up on Twitter and creating a new app at apps.twitter.com):
 
